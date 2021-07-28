@@ -1,0 +1,15 @@
+@using Microsoft.VisualBasic;
+
+<form method="post" >
+    <input name="__RequestVerificationToken" asp-fragment="email" value="">
+    <button type='submit' onclick=getUsers()>Validate</button>    
+</form>
+
+<script>
+    async function getUsers() {
+        let response = await fetch('https://whispering-tundra-91467.herokuapp.com/api/users/nicolas.genest@codeboxx.biz/')
+        let data = await response.json()
+        return data
+    }
+    getUsers().then(data => console.log(data));
+</script>

@@ -169,3 +169,7 @@
 /Users/officeimac/rocket_elevators_customer_portal/bin/Debug/net5.0/Renci.SshNet.dll
 /Users/officeimac/rocket_elevators_customer_portal/bin/Debug/net5.0/SshNet.Security.Cryptography.dll
 /Users/officeimac/rocket_elevators_customer_portal/bin/Debug/net5.0/System.Xml.XPath.XmlDocument.dll
+/Users/officeimac/rocket_elevators_customer_portal/bin/Debug/net5.0/System.Net.Http.Formatting.dll
+/Users/officeimac/rocket_elevators_customer_portal/bin/Debug/net5.0/Newtonsoft.Json.Bson.dll
+/Users/officeimac/rocket_elevators_customer_portal/obj/Debug/net5.0/Razor/Views/Shared/_UserinputEmail.cshtml.g.cs
+/Users/officeimac/rocket_elevators_customer_portal/obj/Debug/net5.0/Razor/Views/Registration/Index.cshtml.g.cs

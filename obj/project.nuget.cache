@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "dUOx+AFe90jmUwKMEZtfw/556xUL8TdXEfiOgxuUKu3kiPRjb5cGbo4R/A8GQOfLRbLKnk27J60jgRAT/K3ppQ==",
+  "dgSpecHash": "pavL8WpoP6nFeXOuAL0ibSvDPFXYWd1cvfED3li3lmeXALO0oJeiP1plTfjQH6xbbbjygOlRaFc1qQCwZYbuiA==",
   "success": true,
   "projectFilePath": "/Users/officeimac/rocket_elevators_customer_portal/rocket_elevators_customer_portal.csproj",
   "expectedPackageFiles": [
     "/Users/officeimac/.nuget/packages/bouncycastle.netcore/1.8.3/bouncycastle.netcore.1.8.3.nupkg.sha512",
     "/Users/officeimac/.nuget/packages/google.protobuf/3.6.1/google.protobuf.3.6.1.nupkg.sha512",
     "/Users/officeimac/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
+    "/Users/officeimac/.nuget/packages/microsoft.aspnet.webapi.client/5.2.7/microsoft.aspnet.webapi.client.5.2.7.nupkg.sha512",
     "/Users/officeimac/.nuget/packages/microsoft.aspnetcore.cryptography.internal/5.0.8/microsoft.aspnetcore.cryptography.internal.5.0.8.nupkg.sha512",
     "/Users/officeimac/.nuget/packages/microsoft.aspnetcore.cryptography.keyderivation/5.0.8/microsoft.aspnetcore.cryptography.keyderivation.5.0.8.nupkg.sha512",
     "/Users/officeimac/.nuget/packages/microsoft.aspnetcore.html.abstractions/2.2.0/microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
@@ -70,6 +71,7 @@
     "/Users/officeimac/.nuget/packages/mysqlconnector/1.3.11/mysqlconnector.1.3.11.nupkg.sha512",
     "/Users/officeimac/.nuget/packages/netstandard.library/1.6.1/netstandard.library.1.6.1.nupkg.sha512",
     "/Users/officeimac/.nuget/packages/newtonsoft.json/11.0.2/newtonsoft.json.11.0.2.nupkg.sha512",
+    "/Users/officeimac/.nuget/packages/newtonsoft.json.bson/1.0.1/newtonsoft.json.bson.1.0.1.nupkg.sha512",
     "/Users/officeimac/.nuget/packages/pomelo.entityframeworkcore.mysql/5.0.1/pomelo.entityframeworkcore.mysql.5.0.1.nupkg.sha512",
     "/Users/officeimac/.nuget/packages/runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl/4.3.0/runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "/Users/officeimac/.nuget/packages/runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl/4.3.0/runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",

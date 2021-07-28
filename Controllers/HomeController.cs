@@ -6,6 +6,15 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using rocket_elevators_customer_portal.Models;
+using System.Net.Http;
+using System.IO;
+using System.Net;
+using System.Text;
+
+// using APIConsume.Models;
+
+using Newtonsoft.Json;
+
 
 namespace rocket_elevators_customer_portal.Controllers
 {
@@ -20,6 +29,8 @@ namespace rocket_elevators_customer_portal.Controllers
 
         public IActionResult Index()
         {
+            
+            WebRequest request = WebRequest.Create("https://docs.microsoft.com");
             return View();
         }
 

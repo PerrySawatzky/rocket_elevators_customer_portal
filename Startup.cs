@@ -24,7 +24,8 @@ namespace rocket_elevators_customer_portal
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            
+            services.AddRazorPages();
+            // services.AddScoped<TokenProvider>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -33,6 +34,9 @@ namespace rocket_elevators_customer_portal
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                // app.UseDatabaseErrorPage();
+                // Tutorial told me to include, but it might be part of the token authentication process, that I skipped.
+                // Tutorial in question https://docs.microsoft.com/en-us/aspnet/core/security/authentication/scaffold-identity?view=aspnetcore-3.1&tabs=netcore-cli#create-full-identity-ui-source
             }
             else
             {
@@ -46,9 +50,11 @@ namespace rocket_elevators_customer_portal
             app.UseRouting();
 
             app.UseAuthorization();
+            app.UseAuthentication();
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapRazorPages();
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
