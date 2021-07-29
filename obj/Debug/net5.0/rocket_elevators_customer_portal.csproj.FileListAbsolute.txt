@@ -173,3 +173,7 @@
 /Users/officeimac/rocket_elevators_customer_portal/bin/Debug/net5.0/Newtonsoft.Json.Bson.dll
 /Users/officeimac/rocket_elevators_customer_portal/obj/Debug/net5.0/Razor/Views/Shared/_UserinputEmail.cshtml.g.cs
 /Users/officeimac/rocket_elevators_customer_portal/obj/Debug/net5.0/Razor/Views/Registration/Index.cshtml.g.cs
+/Users/officeimac/rocket_elevators_customer_portal/obj/Debug/net5.0/Razor/Areas/Identity/Pages/Account/Register.cshtml.g.cs
+/Users/officeimac/rocket_elevators_customer_portal/obj/Debug/net5.0/Razor/Areas/Identity/Pages/Account/_ViewImports.cshtml.g.cs
+/Users/officeimac/rocket_elevators_customer_portal/obj/Debug/net5.0/Razor/Areas/Identity/Pages/_ViewImports.cshtml.g.cs
+/Users/officeimac/rocket_elevators_customer_portal/obj/Debug/net5.0/Razor/Areas/Identity/Pages/Account/RegisterConfirmation.cshtml.g.cs

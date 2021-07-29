@@ -35,7 +35,7 @@ namespace rocket_elevators_customer_portal.Areas.Identity
                 .EnableSensitiveDataLogging() // <-- These two calls are optional but help
                 .EnableDetailedErrors()       // <-- with debugging (remove for production).
         );
-                services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+                services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
                     .AddEntityFrameworkStores<rocket_elevators_customer_portalIdentityDbContext>();
             });
         }
