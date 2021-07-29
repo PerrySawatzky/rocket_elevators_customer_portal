@@ -1,9 +1,34 @@
 @{
     ViewData["Title"] = "Intervention Form";
 }
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
 
-<div class="text-center">
-    <h1 class="display-4">Intervention Form</h1>
-    <a asp-action="index" asp-controller="home">Home</a> <br>
-    <a asp-action="profile" asp-controller="customer">Customer Profile</a>
-</div>
+@if (SignInManager.IsSignedIn(User))
+{
+    <div class="text-center">
+        <h1 class="display-4">Intervention Form</h1>
+        <a asp-action="index" asp-controller="home">Home</a> <br>
+        <a asp-action="profile" asp-controller="customer">Customer Profile</a>
+    </div>
+    <form class="text-center" id="interventionForm" method="post">
+        <select id="Country" name="Country">
+            <option value="MX">Mexico</option>
+            <option selected="selected" value="CA">Canada</option>
+            <option value="US">USA</option>
+        </select>
+
+        
+    </form>
+}
+@if (SignInManager.IsSignedIn(User) == false)
+{
+     <div class="text-center">
+        <h1 class="display-4">Please log in</h1>
+        <a asp-action="index" asp-controller="home">Home</a> <br>
+    </div>
+}
+<script>
+
+</script>
