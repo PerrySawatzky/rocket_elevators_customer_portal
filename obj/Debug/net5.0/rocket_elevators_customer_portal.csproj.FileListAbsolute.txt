@@ -37,8 +37,6 @@
 /Users/officeimac/rocket_elevators_customer_portal/obj/Debug/net5.0/rocket_elevators_customer_portal.pdb
 /Users/officeimac/rocket_elevators_customer_portal/obj/Debug/net5.0/rocket_elevators_customer_portal.genruntimeconfig.cache
 /Users/officeimac/rocket_elevators_customer_portal/obj/Debug/net5.0/rocket_elevators_customer_portal.csproj.CopyComplete
-/Users/officeimac/rocket_elevators_customer_portal/obj/Debug/net5.0/Razor/Views/Customer/Index.cshtml.g.cs
-/Users/officeimac/rocket_elevators_customer_portal/obj/Debug/net5.0/Razor/Views/Customer/profile.cshtml.g.cs
 /Users/officeimac/rocket_elevators_customer_portal/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.dll
 /Users/officeimac/rocket_elevators_customer_portal/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.Abstractions.dll
 /Users/officeimac/rocket_elevators_customer_portal/bin/Debug/net5.0/Microsoft.EntityFrameworkCore.InMemory.dll
@@ -177,3 +175,6 @@
 /Users/officeimac/rocket_elevators_customer_portal/obj/Debug/net5.0/Razor/Areas/Identity/Pages/Account/_ViewImports.cshtml.g.cs
 /Users/officeimac/rocket_elevators_customer_portal/obj/Debug/net5.0/Razor/Areas/Identity/Pages/_ViewImports.cshtml.g.cs
 /Users/officeimac/rocket_elevators_customer_portal/obj/Debug/net5.0/Razor/Areas/Identity/Pages/Account/RegisterConfirmation.cshtml.g.cs
+/Users/officeimac/rocket_elevators_customer_portal/obj/Debug/net5.0/Razor/Areas/Identity/Pages/Account/Login.cshtml.g.cs
+/Users/officeimac/rocket_elevators_customer_portal/obj/Debug/net5.0/Razor/Views/Intervention/Index.cshtml.g.cs
+/Users/officeimac/rocket_elevators_customer_portal/obj/Debug/net5.0/Razor/Views/Intervention/profile.cshtml.g.cs

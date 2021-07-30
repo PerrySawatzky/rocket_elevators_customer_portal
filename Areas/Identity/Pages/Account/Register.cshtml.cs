@@ -79,7 +79,7 @@ namespace rocket_elevators_customer_portal.Areas.Identity.Pages.Account
                 //declare bool is 200
                 // Call API here
                 var request = new HttpClient();
-                var response = await request.GetAsync("https://whispering-tundra-91467.herokuapp.com/api/users");
+                var response = await request.GetAsync("https://whispering-tundra-91467.herokuapp.com/api/customers");
                 var emails = response.Content.ReadAsStringAsync().Result;
                 if (emails.Contains(Input.Email))
                 // if ( isUserExist == true
