@@ -1,0 +1,148 @@
+@* @model RocketElevatorsCustomerPortal.Views.Product.ModifyContactInfo *@
+@* @model dynamic *@
+
+@{
+    ViewBag.Title = "Modify Account";
+}
+
+@model Customer
+
+<link href="dashboard.css" rel="stylesheet">
+
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+    @* <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"> *@
+    @*     <h1 class="h2">Modify Contact Info</h1> *@
+    @* </div> *@
+
+    <h2>Modify Contact Info <a asp-action="Index" class="btn btn-sm btn-secondary">Back</a></h2>
+    @* method="post" *@
+    <form onsubmit="return ModifyContactInfo()">
+        <div class="form-group">
+            <label asp-for="id"></label>
+            <input class="form-control" value="@Model.id" asp-for="id" readonly />
+        </div>
+        <div class="form-group">
+            <label asp-for="company_name"></label>
+            <input class="form-control" id="CompanyName" value="@Model.company_name" asp-for="company_name" />
+        </div>
+        <div class="form-group">
+            <label asp-for="company_contact_full_name"></label>
+            <input class="form-control" id="NameOfContact" value="@Model.company_contact_full_name" asp-for="company_contact_full_name" />
+        </div>
+        <div class="form-group">
+            <label asp-for="company_contact_phone"></label>
+            <input class="form-control" id="CompanyContactPhone" value="@Model.company_contact_phone" asp-for="company_contact_phone" />
+        </div>
+        <div class="form-group">
+            <label asp-for="company_contact_email"></label>
+            <input class="form-control" id="EmailOfTheCompany" value="@Model.company_contact_email" asp-for="company_contact_email" readonly />
+        </div>
+        <div class="form-group">
+            <label asp-for="company_description"></label>
+            <input class="form-control" id="CompanyDescription" value="@Model.company_description" asp-for="company_description" />
+        </div>
+        <div class="form-group">
+            <label asp-for="service_tech_authority_full_name"></label>
+            <input class="form-control" id="NameOfServiceTechAuthority" value="@Model.service_tech_authority_full_name" asp-for="service_tech_authority_full_name" />
+        </div>
+        <div class="form-group">
+            <label asp-for="technical_authority_for_service_phone"></label>
+            <input class="form-control" id="TechAuhtorityPhone" value="@Model.technical_authority_for_service_phone" asp-for="technical_authority_for_service_phone" />
+        </div>
+        <div class="form-group">
+            <label asp-for="technical_manager_email_for_service"></label>
+            <input class="form-control" id="TechManagerServiceEmail" value="@Model.technical_manager_email_for_service" asp-for="technical_manager_email_for_service" />
+        </div>
+        <div class="text-center panel-body">
+            <button type="submit" id="update" class="btn btn-sm btn-primary">Update</button>
+        </div>
+    </form>
+
+    @if (ViewBag.Result == "Info updated")
+    {
+        <h2>Account</h2>
+        <table class="table table-sm table-striped table-bordered m-2">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Company</th>
+                    <th scope="col">Contact</th>
+                    <th scope="col">Phone</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">About</th>
+                    <th scope="col">Tech Contact</th>
+                    <th scope="col">Tech Phone</th>
+                    <th scope="col">Tech Email</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td>@Model.id</td>
+                    <td>@Model.company_name</td>
+                    <td>@Model.company_contact_full_name</td>
+                    <td>@Model.company_contact_phone</td>
+                    <td>@Model.company_contact_email</td>
+                    <td>@Model.company_description</td>
+                    <td>@Model.service_tech_authority_full_name</td>
+                    <td>@Model.technical_authority_for_service_phone</td>
+                    <td>@Model.technical_manager_email_for_service</td>
+                </tr>
+
+            </tbody>
+        </table>
+    }
+
+</main>
+
+<script>  
+function ModifyContactInfo() {
+    // $(document).ready(function ModifyContactInfo() {
+        var data = {
+            id: $('#id').val(),
+            CompanyName: $('#CompanyName').val(),
+            NameOfContact: $('#NameOfContact').val(),
+            CompanyContactPhone: $('#CompanyContactPhone').val(),
+            EmailOfTheCompany: $('#EmailOfTheCompany').val(),
+            CompanyDescription: $('#CompanyDescription').val(),
+            NameOfServiceTechAuthority: $('#NameOfServiceTechAuthority').val(),
+            TechAuhtorityPhone: $('#TechAuhtorityPhone').val(),
+            TechManagerServiceEmail: $('#TechManagerServiceEmail').val()
+        };
+        console.log(data)
+        // var customer = new Customer();  
+        // customer.CompanyName = "";  
+        // customer.NameOfContact = ""; 
+        //  $("#update").click(function () {
+            $.ajax({  
+                url: 'https://whispering-tundra-91467.herokuapp.com/api/customers',  
+                type: 'PUT',  
+                // dataType: 'json',  
+                data: JSON.stringify(data),
+                headers: {
+                    "Access-Control-Allow-Origin": "*",
+                    "Access-Control-Allow-Methods": "HEAD, GET, POST, PUT, PATCH, DELETE",
+                    "Access-Control-Allow-Headers": "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With",
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                success: function (data, textStatus, xhr) {  
+                    console.log(data);
+                    alert('Info updated');
+                },  
+                error: function (xhr, textStatus, errorThrown) {  
+                    console.log('Error in Operation');
+                    console.log(data);
+                    alert('Failed to update');
+                }  
+            });  
+        return false;
+    }
+</script>  
+
+@* reference: https://www.c-sharpcorner.com/UploadFile/dacca2/web-api-with-ajax-make-put-request-in-restful-web-api-servi/ *@
+
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" crossorigin="anonymous"></script>
+<script src="~/js/dashboard.js"></script>

@@ -15619,6 +15619,11 @@
   "RootNamespace": "rocket_elevators_customer_portal",
   "Documents": [
     {
+      "FilePath": "/Users/officeimac/rocket_elevators_customer_portal/Views/Intervention/Index.cshtml",
+      "TargetPath": "Views\\Intervention\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/officeimac/rocket_elevators_customer_portal/Views/Shared/_ValidationScriptsPartial.cshtml",
       "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "FileKind": "mvc"
@@ -15631,6 +15636,11 @@
     {
       "FilePath": "/Users/officeimac/rocket_elevators_customer_portal/Views/Shared/Error.cshtml",
       "TargetPath": "Views\\Shared\\Error.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/officeimac/rocket_elevators_customer_portal/Views/Product/Index.cshtml",
+      "TargetPath": "Views\\Product\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15649,13 +15659,8 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/Users/officeimac/rocket_elevators_customer_portal/Views/Customer/Index.cshtml",
-      "TargetPath": "Views\\Customer\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/Users/officeimac/rocket_elevators_customer_portal/Views/Customer/profile.cshtml",
-      "TargetPath": "Views\\Customer\\profile.cshtml",
+      "FilePath": "/Users/officeimac/rocket_elevators_customer_portal/Views/Product/ModifyContactInfo.cshtml",
+      "TargetPath": "Views\\Product\\ModifyContactInfo.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15689,6 +15694,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/officeimac/rocket_elevators_customer_portal/Views/Product/ModifyAddressInfo.cshtml",
+      "TargetPath": "Views\\Product\\ModifyAddressInfo.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/officeimac/rocket_elevators_customer_portal/Views/_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
       "FileKind": "mvc"
@@ -15696,6 +15706,11 @@
     {
       "FilePath": "/Users/officeimac/rocket_elevators_customer_portal/Views/Shared/_UserinputEmail.cshtml",
       "TargetPath": "Views\\Shared\\_UserinputEmail.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/officeimac/rocket_elevators_customer_portal/Views/Intervention/profile.cshtml",
+      "TargetPath": "Views\\Intervention\\profile.cshtml",
       "FileKind": "mvc"
     },
     {

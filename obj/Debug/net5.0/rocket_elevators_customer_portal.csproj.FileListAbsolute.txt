@@ -178,3 +178,6 @@
 /Users/officeimac/rocket_elevators_customer_portal/obj/Debug/net5.0/Razor/Areas/Identity/Pages/Account/Login.cshtml.g.cs
 /Users/officeimac/rocket_elevators_customer_portal/obj/Debug/net5.0/Razor/Views/Intervention/Index.cshtml.g.cs
 /Users/officeimac/rocket_elevators_customer_portal/obj/Debug/net5.0/Razor/Views/Intervention/profile.cshtml.g.cs
+/Users/officeimac/rocket_elevators_customer_portal/obj/Debug/net5.0/Razor/Views/Product/Index.cshtml.g.cs
+/Users/officeimac/rocket_elevators_customer_portal/obj/Debug/net5.0/Razor/Views/Product/ModifyAddressInfo.cshtml.g.cs
+/Users/officeimac/rocket_elevators_customer_portal/obj/Debug/net5.0/Razor/Views/Product/ModifyContactInfo.cshtml.g.cs
