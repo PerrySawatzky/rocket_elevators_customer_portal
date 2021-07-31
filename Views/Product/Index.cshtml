@@ -13,15 +13,14 @@
 <div>
     <h1 hidden id="userEmailReally">@user.Email</h1>
     <h1 hidden id="userCustomerID"></h1>
+    <h1 hidden id="userColumnID"></h1>
 </div>
 
 <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">Products</h1>
     </div>
-    @*batteries, columns and elevators*@
-    @*Each item will provide direct access to the intervention request form, which should be automatically assigned to the selected product. He will also be able to modify his personal information, such as addresses or contact details.*@
-
+    
     <h3>Account Info</h3>
     <div class="table-responsive">
     <table class="table table-striped table-sm">
@@ -40,33 +39,12 @@
         </tr>
         </thead>
         <tbody>
-        @foreach (Customer cust in Model.Customer)
-       
-        if (cust.id == 1)
-        {
-           
-            <tr>
-                <td>
-                    <a  asp-action="ModifyContactInfo" asp-route-id="@cust.id">
-                        modify
-                    </a>
-                    @* <a asp-page="/ModifyContactInfo" asp-route-id="@cust.id">Test</a> *@
-                </td>
-                <td>@cust.id</td>
-                <td>@cust.company_name</td>
-                <td>@cust.company_contact_full_name</td>
-                <td>@cust.company_contact_phone</td>
-                <td>@cust.company_contact_email</td>
-                <td>@cust.company_description</td>
-                <td>@cust.service_tech_authority_full_name</td>
-                <td>@cust.technical_authority_for_service_phone</td>
-                <td>@cust.technical_manager_email_for_service</td>
+            <tr id="customerInfo">
             </tr>
-        }
         </tbody>
     </table>
     </div>
-
+    <h3>Address Info</h3>
     <div class="table-responsive">
         <table class="table table-striped table-sm">
             <thead>
@@ -85,36 +63,18 @@
             </tr>
             </thead>
             <tbody>
-            @foreach (Address add in Model.Address)
-            {
-                <tr>
-                    <td>
-                        <a  asp-action="ModifyAddressInfo" asp-route-id="@add.id">
-                            modify
-                        </a>
-                        @* <a asp-page="/ModifyContactInfo" asp-route-id="@cust.id">Test</a> *@
-                    </td>
-                    <td>@add.id</td>
-                    <td>@add.address_type</td>
-                    <td>@add.status</td>
-                    <td>@add.entity</td>
-                    <td>@add.number_and_street</td>
-                    <td>@add.suite_or_apartment</td>
-                    <td>@add.city</td>
-                    <td>@add.postal_code</td>
-                    <td>@add.country</td>
-                    <td>@add.notes</td>
+                <tr id="addressInfo">
                 </tr>
-            }
             </tbody>
         </table>
 
     </div>
-    
+    <h3>Buildings</h3>
             <div class="table-responsive">
                 <table class="table table-striped table-sm">
                     <thead>
                         <tr>
+                            <th scope="col"></th>
                             <th scope="col">ID</th>
                             <th scope="col">Admin</th>
                             <th scope="col">Email</th>
@@ -125,18 +85,8 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach (Building bldg in Model.Building)
-                        {
-                        <tr>
-                            <td>@bldg.id</td>
-                            <td>@bldg.full_name_of_the_building_administrator</td>
-                            <td>@bldg.email_of_the_administrator_of_the_building</td>
-                            <td>@bldg.phone_number_of_the_building_administrator</td>
-                            <td>@bldg.full_name_of_the_technical_contact_for_the_building</td>
-                            <td>@bldg.technical_contact_email_for_the_building</td>
-                            <td>@bldg.technical_contact_phone_for_the_building</td>
+                        <tr id="buildingInfo">
                         </tr>
-                        }
                     </tbody>
                 </table>
     
@@ -147,6 +97,7 @@
             <table class="table table-striped table-sm">
                 <thead>
                     <tr>
+                        <th scope="col"></th>
                         <th scope="col">ID</th>
                         <th scope="col">Type</th>
                         <th scope="col">Status</th>
@@ -158,9 +109,9 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach (Battery batt in Model.Batteries)
+                        <tr id="batteryInfo">
+                    @* @foreach (Battery batt in Model.Batteries)
                     {
-                        <tr>
                             <td>@batt.id</td>
                             <td>@batt.battery_type</td>
                             <td>@batt.status</td>
@@ -169,8 +120,8 @@
                             <td>@batt.certificate_of_operations</td>
                             <td>@batt.information</td>
                             <td>@batt.notes</td>
+                    } *@
                         </tr>
-                    }
                 </tbody>
             </table>
         </div>
@@ -180,6 +131,7 @@
             <table class="table table-striped table-sm">
                 <thead>
                     <tr>
+                        <th scope="col"></th>
                         <th scope="col">ID</th>
                         <th scope="col">Type</th>
                         <th scope="col">Floors</th>
@@ -189,17 +141,17 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach (Column col in Model.Columns)
+                        <tr id="columnInfo">
+                    @* @foreach (Column col in Model.Columns)
                     {
-                        <tr>
                             <td>@col.id</td>
                             <td>@col.column_type</td>
                             <td>@col.num_floors_served</td>
                             <td>@col.status</td>
                             <td>@col.information</td>
                             <td>@col.notes</td>
+                    } *@
                         </tr>
-                    }
                 </tbody>
             </table>
         </div>
@@ -209,6 +161,7 @@
             <table class="table table-striped table-sm">
                 <thead>
                     <tr>
+                        <th scope="col"></th>
                         <th scope="col">ID</th>
                         <th scope="col">Serial #</th>
                         <th scope="col">Model</th>
@@ -221,22 +174,7 @@
                         <th scope="col">Notes</th>
                     </tr>
                 </thead>
-                <tbody>
-                    @foreach (Elevator elev in Model.Elevators)
-                    {
-                        <tr>
-                            <td>@elev.id</td>
-                            <td>@elev.serial_number</td>
-                            <td>@elev.model</td>
-                            <td>@elev.elevator_type</td>
-                            <td>@elev.status</td>
-                            <td>@elev.date_of_commissioning</td>
-                            <td>@elev.last_inspection</td>
-                            <td>@elev.certificate_of_inspection</td>
-                            <td>@elev.information</td>
-                            <td>@elev.notes</td>
-                        </tr>
-                    }
+                <tbody id="elevatorInfo">    
                 </tbody>
             </table>
         </div>
@@ -244,9 +182,108 @@
 </main>
 }
 @section Scripts {
-    <script>
+<script>
+function addressScript() {
+    var userID = document.getElementById("userCustomerID").value;
+    $.ajax({
+        cache: false,
+        url: 'https://whispering-tundra-91467.herokuapp.com/api/addresses/',
+        type: 'GET',
+        dataType: 'json',
+        success: function (obj) {
+            for (var i = 0; i < obj.length; i++){
+                if (obj[i].id == userID){                            
+                    $("#addressInfo").append('<td><a  href="/Product/ModifyAddressInfo/'+obj[i].id+'">Modify</a></td><td>'+obj[i].id+'</td><td>'+obj[i].address_type+'</td><td>'+obj[i].status+'</td><td>'+obj[i].entity+'</td><td>'+obj[i].number_and_street+'</td><td>'+obj[i].suite_or_apartment+'</td><td>'+obj[i].city+'</td><td>'+obj[i].postal_code+'</td><td>'+obj[i].country+'</td><td>'+obj[i].notes+'</td>');
+                }
+            }
+        },
+        error: function (obj) {
+            console.log('Something happened');
+        }
+    });
+}
+function buildingScript() {
+    var buildingID = document.getElementById("userCustomerID").value;
+    $.ajax({
+        cache: false,
+        url: 'https://whispering-tundra-91467.herokuapp.com/api/buildings/',
+        type: 'GET',
+        dataType: 'json',
+        success: function (obj) {
+            for (var i = 0; i < obj.length; i++){
+                if (obj[i].id == buildingID){                            
+                    $("#buildingInfo").append('<td><a  href="/Intervention/Index/">Report Problem</a></td><td>'+obj[i].id+'</td><td>'+obj[i].full_name_of_the_building_administrator+'</td><td>'+obj[i].email_of_the_administrator_of_the_building+'</td><td>'+obj[i].phone_number_of_the_building_administrator+'</td><td>'+obj[i].full_name_of_the_technical_contact_for_the_building+'</td><td>'+obj[i].technical_contact_email_for_the_building+'</td><td>'+obj[i].technical_contact_phone_for_the_building+'</td>');
+                }
+            }
+        },
+        error: function (obj) {
+            console.log('Something happened');
+        }
+    });
+}
+function batteryScript() {
+    var batteryID = document.getElementById("userCustomerID").value;
+    $.ajax({
+        cache: false,
+        url: 'https://whispering-tundra-91467.herokuapp.com/api/batteries/',
+        type: 'GET',
+        dataType: 'json',
+        success: function (obj) {
+            for (var i = 0; i < obj.length; i++){
+                if (obj[i].id == batteryID){                            
+                    $("#batteryInfo").append('<td><a  href="/Intervention/Index/">Report Problem</a></td><td>'+obj[i].id+'</td><td>'+obj[i].battery_type+'</td><td>'+obj[i].status+'</td><td>'+obj[i].commissioned_date+'</td><td>'+obj[i].last_inspection_date+'</td><td>'+obj[i].certificate_of_operations+'</td><td>'+obj[i].information+'</td><td>'+obj[i].notes+'</td>');
+                }
+            }
+        },
+        error: function (obj) {
+            console.log('Something happened');
+        }
+    });
+}
+function columnScript() {
+    var columnID = document.getElementById("userCustomerID").value;
+    $.ajax({
+        cache: false,
+        url: 'https://whispering-tundra-91467.herokuapp.com/api/columns/',
+        type: 'GET',
+        dataType: 'json',
+        success: function (obj) {
+            for (var i = 0; i < obj.length; i++){
+                if (obj[i].id == columnID){                            
+                    $("#columnInfo").append('<td><a  href="/Intervention/Index/">Report Problem</a></td><td>'+obj[i].id+'</td><td>'+obj[i].column_type+'</td><td>'+obj[i].num_floors_served+'</td><td>'+obj[i].status+'</td><td>'+obj[i].information+'</td><td>'+obj[i].notes+'</td>');
+                    document.getElementById('userColumnID').value = obj[i].id;
+                    setTimeout(elevatorScript, 1);
+                }
+            }
+        },
+        error: function (obj) {
+            console.log('Something happened');
+        }
+    });
+}
+function elevatorScript() {
+    var columnID = document.getElementById("userColumnID").value;
+    $.ajax({
+        cache: false,
+        url: 'https://whispering-tundra-91467.herokuapp.com/api/elevators/',
+        type: 'GET',
+        dataType: 'json',
+        success: function (obj) {
+            for (var i = 0; i < obj.length; i++){
+                if (obj[i].column_id == columnID){                            
+                    $("#elevatorInfo").append('<tr><td><a  href="/Intervention/Index/">Report Problem</a></td><td>'+obj[i].id+'</td><td>'+obj[i].serial_number+'</td><td>'+obj[i].model+'</td><td>'+obj[i].elevator_type+'</td><td>'+obj[i].status+'</td><td>'+obj[i].date_of_commissioning+'</td><td>'+obj[i].last_inspection+'</td><td>'+obj[i].certificate_of_inspection+'</td><td>'+obj[i].information+'</td><td>'+obj[i].notes+'</td></tr>');
+                    document.getElementById('userColumnID').value = obj[i].id;
+                }
+            }
+        },
+        error: function (obj) {
+            console.log('Something happened');
+        }
+    });
+}
 $( document ).ready(function() {
 var userEmail = document.getElementById("userEmailReally").innerHTML;
+
     $.ajax({
         cache: false,
         url: 'https://whispering-tundra-91467.herokuapp.com/api/customers/',
@@ -255,10 +292,16 @@ var userEmail = document.getElementById("userEmailReally").innerHTML;
         success: function (obj) {
             for (var i = 0; i < obj.length; i++){
                 if (obj[i].company_contact_email == userEmail){                            
-                    console.log("Just the id",obj[i].id);
+                    $("#customerInfo").append('<td><a  href="/Product/ModifyContactInfo/'+obj[i].id+'">Modify</a></td><td>'+obj[i].id+'</td><td>'+obj[i].company_name+'</td><td>'+obj[i].company_contact_full_name+'</td><td>'+obj[i].company_contact_phone+'</td><td>'+obj[i].company_contact_email+'</td><td>'+obj[i].company_description+'</td><td>'+obj[i].service_tech_authority_full_name+'</td><td>'+obj[i].technical_authority_for_service_phone+'</td><td>'+obj[i].technical_manager_email_for_service+'</td><br>');
                     document.getElementById('userCustomerID').value = obj[i].id;
+                    setTimeout(addressScript, 1);
+                    setTimeout(buildingScript, 1);
+                    setTimeout(batteryScript, 1);
+                    setTimeout(columnScript, 1);
+                    //console.log("Just the id",obj[i].id);
+                    //document.getElementById('userCustomerID').value = obj[i].id;
                     
-                    console.log("You fucking wizard",document.getElementById("userCustomerID").value);
+                    //console.log("You fucking wizard",document.getElementById("userCustomerID").value);
                 }
             }
         },

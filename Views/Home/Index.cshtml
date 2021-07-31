@@ -5,7 +5,14 @@
 <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
 <link rel="stylesheet" href="~/css/site.css" />
 <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" />
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
 
+
+
+@if (SignInManager.IsSignedIn(User))
+{
 
 <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
     <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" asp-controller="Home" asp-action="Index">Rocket Elevators</a>
@@ -17,11 +24,11 @@
         <div class="nav-item text-nowrap">
             @*<a class="nav-link px-3" href="#">Sign out</a>*@
 
-            <div class="nav-link px-3">
+            @* <div class="nav-link px-3">
                 <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
                     <button id="logout" type="submit" class="nav-link btn btn-link text-light">Logout</button>
                 </form>
-            </div>
+            </div> *@
 
         </div>
     </div>
@@ -49,12 +56,12 @@
                             Products
                         </a>
                     </li>
-                    <li class="nav-item">
+                    @* <li class="nav-item">
                         <a class="nav-link" href="#">
                             <span data-feather="users"></span>
                             Chat
                         </a>
-                    </li>
+                    </li> *@
                     @* <li class="nav-item"> *@
                     @*     <a class="nav-link" href="#"> *@
                     @*         <span data-feather="bar-chart-2"></span> *@
@@ -250,9 +257,29 @@
                     </tbody>
                 </table>
             </div>
+<p class="mt-5 mb-3 text-muted">&copy; Site by Perry Sawatzky</p>
         </main>
          </div>
 </div>
+}
+else {
+ <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="~/css/signin.css" />
+ <body class="text-center">
+    <main class="form-signin">
+        <form id="account" method="post">
+            <img class="mb-4" src="~/img/rocket-logo.png" alt="Rocket Elevators logo" width="170" height="77">
+            <h1 class="h3 mb-3 fw-normal">Customer Portal</h1>
+           
+            <partial name="_LoginPartial" />
+            
+            
+            
+            <p class="mt-5 mb-3 text-muted">&copy; Site by Perry Sawatzky</p>
+        </form>
+    </main>
+</body>   
+}
 @*     </div> *@
 @* </div> *@
 

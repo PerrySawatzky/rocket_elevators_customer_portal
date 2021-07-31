@@ -15669,11 +15669,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/Users/officeimac/rocket_elevators_customer_portal/Views/Home/Privacy.cshtml",
-      "TargetPath": "Views\\Home\\Privacy.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "/Users/officeimac/rocket_elevators_customer_portal/Areas/Identity/Pages/_ViewImports.cshtml",
       "TargetPath": "Areas\\Identity\\Pages\\_ViewImports.cshtml",
       "FileKind": "mvc"

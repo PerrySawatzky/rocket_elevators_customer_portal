@@ -10,6 +10,8 @@ using System.Net.Http;
 using System.IO;
 using System.Net;
 using System.Text;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 
 // using APIConsume.Models;
 
@@ -18,6 +20,7 @@ using Newtonsoft.Json;
 
 namespace rocket_elevators_customer_portal.Controllers
 {
+    
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -30,7 +33,6 @@ namespace rocket_elevators_customer_portal.Controllers
         public IActionResult Index()
         {
             
-            WebRequest request = WebRequest.Create("https://docs.microsoft.com");
             return View();
         }
 

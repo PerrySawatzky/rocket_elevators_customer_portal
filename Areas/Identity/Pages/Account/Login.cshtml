@@ -38,12 +38,12 @@
             @*     <label for="floatingPassword">Password</label> *@
             @* </div> *@
             
-            <div class="checkbox mb-3">
+            @* <div class="checkbox mb-3">
                 <label asp-for="Input.RememberMe">
                     <input asp-for="Input.RememberMe" type="checkbox" value="remember-me" />
                     @Html.DisplayNameFor(m => m.Input.RememberMe)
                 </label>
-            </div>
+            </div> *@
 
             @* <div class="checkbox mb-3"> *@
             @*     <label> *@
@@ -54,7 +54,7 @@
             
             <div class="form-floating">
                 <p>
-                    <a id="forgot-password" asp-page="./ForgotPassword">Forgot your password?</a>
+                    <a id="forgot-password" asp-page="./Privacy" asp-route-returnUrl="@Model.ReturnUrl">Forgot your password?</a>
                 </p>
                 <p>
                     <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Register as a new user</a>
