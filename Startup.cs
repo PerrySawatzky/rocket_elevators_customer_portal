@@ -23,6 +23,12 @@ namespace rocket_elevators_customer_portal
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(o => o.AddPolicy(name:"MyPolicy", builder =>
+            {
+                builder.AllowAnyOrigin()
+                    .AllowAnyMethod()
+                    .AllowAnyHeader();
+            }));
             services.AddControllersWithViews();
             services.AddRazorPages();
             // services.AddScoped<TokenProvider>();
@@ -48,7 +54,7 @@ namespace rocket_elevators_customer_portal
             app.UseStaticFiles();
 
             app.UseRouting();
-
+            app.UseCors("MyPolicy");
             app.UseAuthorization();
             app.UseAuthentication();
 
