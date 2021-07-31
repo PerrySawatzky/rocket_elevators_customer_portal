@@ -22,7 +22,7 @@
         </div>
         <div class="form-group">
             <label asp-for="address_type"></label>
-            <input class="form-control" id="TypeOfAddress" value="@Model.address_type" asp-for="address_type" />
+            <input class="form-control" id="address_type" value="@Model.address_type" asp-for="address_type" />
         </div>
         <div class="form-group">
             <label asp-for="status"></label>
@@ -105,15 +105,15 @@
         // $(document).ready(function ModifyContactInfo() {
             var data = {
                 id: $('#id').val(),
-                TypeOfAddress: $('#TypeOfAddress').val(),
-                Status: $('#Status').val(),
-                Entity: $('#Entity').val(),
-                NumberAndStreet: $('#NumberAndStreet').val(),
-                Apt: $('#Apt').val(),
-                City: $('#City').val(),
-                PostalCode: $('#PostalCode').val(),
-                Country: $('#Country').val(),
-                Notes: $('#Notes').val()
+                address_type: $('#address_type').val(),
+                status: $('#Status').val(),
+                entity: $('#Entity').val(),
+                number_and_street: $('#NumberAndStreet').val(),
+                suite_or_apartment: $('#Apt').val(),
+                city: $('#City').val(),
+                postal_code: $('#PostalCode').val(),
+                country: $('#Country').val(),
+                notes: $('#Notes').val()
             };
             console.log(data)
             // var customer = new Customer();  
@@ -121,7 +121,7 @@
             // customer.NameOfContact = ""; 
             //  $("#update").click(function () {
                 $.ajax({  
-                    url: 'https://whispering-tundra-91467.herokuapp.com/api/addresses',  
+                    url: 'http://localhost:5002/api/addresses',  
                     type: 'PUT',  
                     // dataType: 'json',  
                     data: JSON.stringify(data),
@@ -146,7 +146,7 @@
         }
     </script>  
 
-<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+@* <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" crossorigin="anonymous"></script>
-<script src="~/js/dashboard.js"></script>
+<script src="~/js/dashboard.js"></script> *@

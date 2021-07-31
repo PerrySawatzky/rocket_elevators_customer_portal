@@ -2,18 +2,24 @@
     ViewData["Title"] = "Products";
 }
 @model dynamic
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
 
-<link href="dashboard.css" rel="stylesheet">
-@*<link rel="stylesheet" href="~/css/dashboard.css" />*@
+
+@if (SignInManager.IsSignedIn(User)){   
+    var user = await UserManager.GetUserAsync(User);
+    
+<div>
+    <h1 hidden id="userEmailReally">@user.Email</h1>
+    <h1 hidden id="userCustomerID"></h1>
+</div>
 
 <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">Products</h1>
     </div>
-
-
     @*batteries, columns and elevators*@
-
     @*Each item will provide direct access to the intervention request form, which should be automatically assigned to the selected product. He will also be able to modify his personal information, such as addresses or contact details.*@
 
     <h3>Account Info</h3>
@@ -35,7 +41,10 @@
         </thead>
         <tbody>
         @foreach (Customer cust in Model.Customer)
+       
+        if (cust.id == 1)
         {
+           
             <tr>
                 <td>
                     <a  asp-action="ModifyContactInfo" asp-route-id="@cust.id">
@@ -233,7 +242,31 @@
         </div>
 
 </main>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" crossorigin="anonymous"></script>
-    <script src="~/js/dashboard.js"></script>
+}
+@section Scripts {
+    <script>
+$( document ).ready(function() {
+var userEmail = document.getElementById("userEmailReally").innerHTML;
+    $.ajax({
+        cache: false,
+        url: 'https://whispering-tundra-91467.herokuapp.com/api/customers/',
+        type: 'GET',
+        dataType: 'json',
+        success: function (obj) {
+            for (var i = 0; i < obj.length; i++){
+                if (obj[i].company_contact_email == userEmail){                            
+                    console.log("Just the id",obj[i].id);
+                    document.getElementById('userCustomerID').value = obj[i].id;
+                    
+                    console.log("You fucking wizard",document.getElementById("userCustomerID").value);
+                }
+            }
+        },
+        error: function (obj) {
+            console.log('Something happened');
+        }
+    });
+});
+</script>
+}
+    

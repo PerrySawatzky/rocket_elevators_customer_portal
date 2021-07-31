@@ -19,7 +19,7 @@
         <h1 class="h2">Intervention Form</h1>
     </div>
 
-    <form method="post" name="" id="">
+    <form onsubmit="return postIntervention()">
         <div class="row">
             <div class="col-md-3">
                 <div >
@@ -46,14 +46,13 @@
 
                 <div class="row">
                     <div class="col-md-12">
-                        <button onclick="postIntervention()" class="btn btn-primary"><i class="fa fa-check"></i> SUBMIT </button>
+                        <button onclick="" class="btn btn-primary"><i class="fa fa-check"></i> SUBMIT </button>
                     </div>
                 </div>
 
             </div>
         </div>
     </form>
-
 </main>
 
 
@@ -69,35 +68,18 @@
 @section Scripts {
 <script type="text/javascript">
    function postIntervention() {
-        // $(document).ready(function ModifyContactInfo() {
             var data = {
-                "author_id": 2,
-                "customer_id": 22,
-                "building_id": 22,
-                "battery_id": 22,
-                "column_id": 22,
-                "elevator_id": 43,
-                "employee_id": 1,
-                "result": "Incomplete",
-                "status": "InProgress"
+                customer_id: $('#customerID').html(),
+                author_id: $('#customerID').html(),
+                building_id: $('#intervention_building_id').val(),
+                battery_id: $('#intervention_battery_id').val(),
+                column_id: $('#intervention_column_id').val(),
+                elevator_id: $('#intervention_elevator_id').val(),
+                report: $('#textarea').val(),
             };
-            console.log(data)
-            // var customer = new Customer();  
-            // customer.CompanyName = "";  
-            // customer.NameOfContact = ""; 
-            //  $("#update").click(function () {
-                
-                fetch("http://localhost:5002/api/interventions", {
-                method: "POST", 
-                body: data
-                }).then(res => {
-                console.log("Request complete! response:", res);
-                });
-
-                @* $.ajax({  
+                $.ajax({  
                     url: 'http://localhost:5002/api/interventions',  
-                    type: 'post',  
-                    // dataType: 'json',  
+                    type: 'POST',
                     data: JSON.stringify(data),
                     headers: {
                         "Access-Control-Allow-Origin": "*",
@@ -106,17 +88,14 @@
                         'Accept': 'application/json',
                         'Content-Type': 'application/json'
                     },
-                    success: function (data, textStatus, xhr) {  
-                        console.log(data);
-                        alert('Info updated');
+                    success: function (data, textStatus, xhr) {
+                        console.log('Info updated');
                     },  
                     error: function (data, xhr, textStatus, errorThrown) {  
                         console.log('Error in Operation');
-                        console.log(data);
-                        console.log('Failed to update');
                     }  
-                });   *@
-            
+                });  
+            return false;
         }
 $( document ).ready(function() {
          var userEmail = document.getElementById("userEmailReally").innerHTML;

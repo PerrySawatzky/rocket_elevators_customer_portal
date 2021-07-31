@@ -15,7 +15,8 @@ using Microsoft.AspNetCore.Identity;
 
 namespace rocket_elevators_customer_portal.Controllers
 {
-    [Authorize]
+    // [Authorize]
+    
     public class ProductController : Controller
     {
         public async Task<IActionResult> IndexAsync()
@@ -55,7 +56,7 @@ namespace rocket_elevators_customer_portal.Controllers
             using (var httpClient = new HttpClient())
             {
                 //HTTP GET request to the API
-                using (var response = await httpClient.GetAsync("https://rocketapis.azurewebsites.net/api/address"))
+                using (var response = await httpClient.GetAsync("https://whispering-tundra-91467.herokuapp.com/api/addresses"))
                 {
                     //data returned by the API is fetched from the code
                     string apiResponse = await response.Content.ReadAsStringAsync();
@@ -210,7 +211,7 @@ namespace rocket_elevators_customer_portal.Controllers
             Address address = new Address();
             using (var httpClient = new HttpClient())
             {
-                using (var response = await httpClient.GetAsync("https://rocketapis.azurewebsites.net/api/address/" + id))
+                using (var response = await httpClient.GetAsync("https://whispering-tundra-91467.herokuapp.com/api/addresses/" + id))
                 {
                     string apiResponse = await response.Content.ReadAsStringAsync();
                     address = JsonConvert.DeserializeObject<Address>(apiResponse);
@@ -228,7 +229,7 @@ namespace rocket_elevators_customer_portal.Controllers
         //     {
         //         var content = new MultipartFormDataContent();
         //         content.Add(new StringContent(address.id.ToString()), "id");
-        //         content.Add(new StringContent(address.TypeOfAddress), "TypeOfAddress");
+        //         content.Add(new StringContent(address.address_type), "address_type");
         //         content.Add(new StringContent(address.Status), "Status");
         //         content.Add(new StringContent(address.Entity), "Entity");
         //         content.Add(new StringContent(address.NumberAndStreet), "NumberAndStreet");
