@@ -810,7 +810,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
             // customer.NameOfContact = """"; 
             //  $(""#update"").click(function () {
                 $.ajax({  
-                    url: 'http://whispering-tundra-91467.herokuapp.com/api/addresses',  
+                    url: 'https://whispering-tundra-91467.herokuapp.com/api/addresses',  
                     type: 'PUT',  
                     // dataType: 'json'");
             WriteLiteral(@",  

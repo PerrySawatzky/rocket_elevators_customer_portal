@@ -263,7 +263,7 @@ using Microsoft.AspNetCore.Identity;
                 report: $('#textarea').val(),
             };
                 $.ajax({  
-                    url: 'http://whispering-tundra-91467.herokuapp.com/api/interventions',  
+                    url: 'https://whispering-tundra-91467.herokuapp.com/api/interventions',  
                     type: 'POST',
                     data: JSON.stringify(data),
                     headers: {

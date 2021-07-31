@@ -750,7 +750,7 @@ function ModifyContactInfo() {
         // customer.NameOfContact = """"; 
         //  $(""#update"").click(function () {
             $.ajax({  
-                url: 'http://whispering-tundra-91467.herokuapp.com/api/customers',  
+                url: 'https://whispering-tundra-91467.herokuapp.com/api/customers',  
  ");
             WriteLiteral(@"               type: 'PUT',  
                 // dataType: 'json',  
